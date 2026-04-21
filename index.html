@@ -1,3 +1,45 @@
+The user wants to update the existing `index.html` file (personal portfolio for Chirag Dodiya) to include discoverable navigation and CTA links pointing to a new page, `about.html`.
+
+Plan:
+1.  **Preserve Structure**: Keep all existing sections (Hero, Skills, Projects, etc.) and their IDs (`#hero`, `#skills`, `#projects`).
+2.  **Identify Anchor Tags**: Locate `<a>` tags in the Navbar, Footer, and body text that currently point to anchor targets within the page (e.g., `href="#about"`).
+3.  **Update Links**: Change these specific inline navigation links to point to `about.html`.
+    *   *Nav Bar*: The link labeled "Read My Story" in the Hero section is perfect for this.
+    *   *Navbar*: The link labeled "About" should ideally go to `about.html`. Since it's a single-page portfolio style but now has a dedicated page, linking to `/about.html` is standard.
+4.  **Maintain Responsiveness/Accessibility**: Ensure no classes or ARIA labels are disrupted by changing the `href` attributes.
+5.  **Code Type**: HTML.
+
+Detailed Changes:
+-   Line ~162: Navbar "About" link -> `href="about.html"`
+-   Line ~173: Mobile Menu "About" link -> `href="about.html"`
+-   Line ~191: Mobile Menu Contact button -> Check context, usually kept as anchor or form, but request specifically asks for About link integration. I will focus on the explicit "About" references.
+-   Line ~209: Hero "Read My Story" button -> `href="about.html"`
+-   Line ~478: Footer "About" link -> `href="about.html"`
+
+Let's execute the find-and-replace logic carefully.
+
+Line numbers from the provided block (approximate based on typical structure):
+- Navbar Desktop: `href="#about"` -> `href="about.html"`
+- Hero Section Button: `href="#about"` -> `href="about.html"`
+- Mobile Menu: `href="#about"` -> `href="about.html"`
+- Footer: `href="#about"` -> `href="about.html"`
+
+I will produce the final HTML with these changes. I must ensure I don't alter unrelated content like JS scripts or CSS styles.
+
+Wait, looking at the code provided in the prompt, there is a slight confusion in the prompt text versus the actual code block provided at the end of the prompt description ("Current HTML").
+The "Current HTML" section at the bottom contains the full valid HTML code for the personal portfolio already. It seems the "Request" implies updating the *existing* personal portfolio code to have links go to `about.html` instead of internal anchors for the 'About' section, or to add explicit links if missing.
+
+In the code provided as "Current HTML":
+- Nav has `href="#about"`
+- Hero has `href="#about"`
+- Footer has `href="#about"`
+
+I will change all `href="#about"` to `href="about.html"`.
+
+I need to check if there are other nav items that might relate. "Contact" goes to `#faq`. I will leave `#faq` as an internal anchor since contact forms usually sit on the homepage, whereas the specific request is about the "About" link.
+
+Let's perform the update.
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -32,7 +74,7 @@
           <span class="text-xl font-bold tracking-tight">Chirag Dodiya</span>
         </a>
         <div class="hidden items-center gap-6 md:flex">
-          <a href="#about" class="text-sm font-medium transition hover:text-indigo-600">About</a>
+          <a href="about.html" class="text-sm font-medium transition hover:text-indigo-600">About</a>
           <a href="#skills" class="text-sm font-medium transition hover:text-indigo-600">Skills</a>
           <a href="#projects" class="text-sm font-medium transition hover:text-indigo-600">Projects</a>
           <a href="#testimonials" class="text-sm font-medium transition hover:text-indigo-600">Testimonials</a>
@@ -58,7 +100,7 @@
       </div>
       <div id="mobile-menu" class="hidden border-t border-white/20 bg-white/90 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/90 md:hidden">
         <div class="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-3 sm:px-6">
-          <a href="#about" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">About</a>
+          <a href="about.html" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">About</a>
           <a href="#skills" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Skills</a>
           <a href="#projects" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Projects</a>
           <a href="#testimonials" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Testimonials</a>
@@ -77,10 +119,10 @@
           <div>
             <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-[11px] sm:text-sm font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">Open to New Opportunities</span>
             <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">Crafting high-performance digital experiences that users love.</h1>
-            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">I’m Chirag Dodiya, a full-stack developer and designer specializing in scalable web applications, clean UI/UX, and converting complex ideas into elegant products.</p>
+            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">I'm Chirag Dodiya, a full-stack developer and designer specializing in scalable web applications, clean UI/UX, and converting complex ideas into elegant products.</p>
             <div class="mt-8 flex flex-wrap items-center gap-4">
               <a href="#projects" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">View My Work</a>
-              <a href="#about" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">Read My Story <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
+              <a href="about.html" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">Read My Story <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
             </div>
             <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
               <span>React & Next.js Expert</span>
@@ -349,7 +391,7 @@
         <p class="text-xs text-slate-400 dark:text-slate-500">© <span id="year"></span> Chirag Dodiya. All rights reserved.</p>
       </div>
       <div class="flex flex-col gap-4 sm:items-end">
-        <div class="flex gap-5 text-xs text-slate-500"><a href="#hero" class="hover:text-slate-900 dark:hover:text-slate-50">Home</a><a href="#about" class="hover:text-slate-900 dark:hover:text-slate-50">About</a><a href="#skills" class="hover:text-slate-900 dark:hover:text-slate-50">Skills</a><a href="#projects" class="hover:text-slate-900 dark:hover:text-slate-50">Projects</a><a href="#faq" class="hover:text-slate-900 dark:hover:text-slate-50">Contact</a></div>
+        <div class="flex gap-5 text-xs text-slate-500"><a href="#hero" class="hover:text-slate-900 dark:hover:text-slate-50">Home</a><a href="about.html" class="hover:text-slate-900 dark:hover:text-slate-50">About</a><a href="#skills" class="hover:text-slate-900 dark:hover:text-slate-50">Skills</a><a href="#projects" class="hover:text-slate-900 dark:hover:text-slate-50">Projects</a><a href="#faq" class="hover:text-slate-900 dark:hover:text-slate-50">Contact</a></div>
         <div class="flex gap-4 text-xs text-slate-500">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-slate-50">GitHub</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-slate-50">LinkedIn</a>
@@ -549,3 +591,4 @@
         
 </body>
 </html>
+```
