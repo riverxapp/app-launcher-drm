@@ -1,9 +1,137 @@
+The user wants to update an existing HTML template to create a personal portfolio landing page for "Chirag Dodiya".
+The current template is a SaaS/productivity tool landing page ("HTML Starter").
+I need to replace the content with Chirag Dodiya's personal portfolio information while preserving the structure, Tailwind classes, responsiveness, and scripts.
+
+Key changes needed:
+1.  **Title/Metadata**: Update `<title>` to "Chirag Dodiya - Portfolio".
+2.  **Navbar**:
+    -   Logo/Brand: Change "HTML Starter" to "Chirag Dodiya" or initials "CD".
+    -   Links: Update nav links to match sections (About, Skills, Projects, Testimonials, Contact).
+    -   CTA: Update "Get Started" to "Contact Me" or similar.
+3.  **Hero Section**:
+    -   Badge/Tagline: Change to something personal like "Available for work" or "Full-Stack Developer & Designer".
+    -   Headline: "Crafting digital experiences..." or similar.
+    -   Subheadline: Intro about Chirag.
+    -   CTAs: Primary -> "View Projects" / "Contact". Secondary -> "About Me".
+    -   Slider/Images: Update images/alt text to reflect portfolio themes (e.g., code, design, projects). Update slider text to highlight skills/value props.
+4.  **Trusted By / Social Proof**: Change company names to tools/technologies or past clients (e.g., "React", "Node.js", "Tailwind", "Figma") or remove if not fitting, but request asks for "trust section" or similar. Actually, the request asks for "testimonials or trust section". I'll keep the structure but adapt the content. The "Trusted by" section could be "Tech Stack" or "Featured In" or just adapt the testimonials section later. Let's convert "Trusted by" to "Trusted by clients like" with placeholder realistic names or adapt it to "Technologies I work with". The prompt says "Trusted by fast-moving teams" -> change to something like "Worked with startups & agencies".
+5.  **Features Section -> Skills/Services**:
+    -   Heading: "Skills & Services".
+    -   Cards: Update to Frontend, Backend, UI/UX, Consulting, etc.
+    -   Keep the grid structure.
+6.  **How it Works -> About/Process**:
+    -   Heading: "About Me" or "My Process". Let's do "About Me" with stats or a brief bio, or "How I Work". The prompt asks for an "About section". I'll transform this section to be the About section.
+    -   3 steps could become 3 highlights of his background or values.
+7.  **Product Preview -> Selected Projects**:
+    -   Heading: "Selected Projects".
+    -   Description: Brief intro to projects.
+    -   Image/Mockup: Update to a project preview style.
+    -   List: Update to project details (Tech stack, Role, Outcome).
+8.  **Benefits -> Projects Grid**:
+    -   Wait, the template has "Product Preview" and "Benefits". I should map "Selected Projects" to one of these, or combine/repurpose.
+    -   Let's map:
+        -   Features -> Skills & Services
+        -   How it works -> About Me
+        -   Product Preview -> Selected Projects (Single featured or list) -> Actually, the prompt asks for "3 realistic sample projects". The Features grid has 6 items. The Product Preview has an image + list. The Benefits has a list.
+        -   Better mapping:
+        -   Hero -> Hero
+        -   Trusted By -> Logos of tools/companies
+        -   Features (Grid of 6) -> Skills (Grid of 6) or maybe reduce to 4? Keep structure.
+        -   How it works (3 steps) -> About / Process
+        -   Product Preview -> Featured Project
+        -   Benefits (2 cols) -> Maybe use for "Services" or "Testimonials"?
+        -   Actually, let's look at the sections in the prompt:
+            -   Hero
+            -   About
+            -   Skills/Services
+            -   Selected Projects (3 samples)
+            -   Testimonials
+            -   Contact/CTA
+            -   Footer
+        -   Current sections:
+            -   Navbar
+            -   Hero
+            -   Trusted By
+            -   Features (Grid) -> Can become Skills (Grid)
+            -   How it works (3 cols) -> Can become About / Process
+            -   Product Preview (Image + List) -> Can become Selected Projects (Image + List of 3 projects? Or just use this structure for one project and add others? The grid in Features has 6 slots. I can use a 3-col grid for Projects. Let's swap "Features" for "Projects" and "Skills" to "How it works" area? No, let's stick to the visual structure.)
+        -   Let's repurpose carefully:
+            -   `#features` (6 cards) -> `#skills` (6 skills/services cards).
+            -   `#how-it-works` (3 steps) -> `#about` (3 columns: Background, Expertise, Values).
+            -   `#product-preview` (Image + text/list) -> `#projects` (Keep image as project showcase, update text to highlight 3 projects? Or maybe change this section to a "Project Showcase" with an image and a list of 3 projects? The list in `#product-preview` has 3 items. Perfect for 3 project summaries!)
+            -   `#benefits` (2 cols) -> `#testimonials` (Left col: Trust heading. Right col: 3 testimonials? Or keep the 2-col layout for testimonials? The `#testimonials` section already exists later. Let's use `#benefits` for a "Why Work With Me" or merge into About. Or just update `#benefits` to be a "Testimonials" highlight section if the later `#testimonials` is too similar. Actually, the template has `#testimonials` with 3 cards. I'll keep that.
+            -   `#testimonials` -> Update content to client quotes.
+            -   `#faq` -> Can become `#contact` or keep as FAQ? The prompt asks for a Contact/Final CTA section. The template has `#final-cta`. I'll update `#faq` to be `#contact` info? Or just keep `#faq` if relevant? Usually portfolios don't need FAQ. I'll change `#faq` to `#contact` or a "Availability" section. The prompt asks for "Contact/Final CTA section". The template has `#final-cta`. I'll update `#faq` to be a "Contact" section with email/link, or just repurpose the `#faq` section into a "Contact Details" section. Actually, `#faq` structure is an accordion. Not ideal for contact. I'll change the `#faq` section to a "Contact" section with a different layout or repurpose the `#faq` heading/content. Wait, minimal change principle suggests keeping structure where possible. I'll change the `#faq` section to a "Get in Touch" section using the same container but removing the accordion and adding contact info/email form style links? Or I can just update the text inside the FAQ accordion to be "Common inquiries for hiring" or swap it to a "Contact" section. Given the constraint to preserve structure, I might just rename `#faq` to `#contact` and change the content to a contact form or info. Actually, the prompt says "Include... a contact/final CTA section". I have `#final-cta`. I'll make `#faq` into a `#contact` section. I'll replace the FAQ items with Contact items or a simple contact block.
+            -   `#final-cta` -> Update text for portfolio CTA.
+            -   Footer -> Update branding.
+
+    -   Refined Mapping:
+        -   Navbar -> Update links: About, Skills, Projects, Testimonials, Contact.
+        -   Hero -> Chirag Dodiya, Full-Stack Developer, etc.
+        -   Trusted By -> "Trusted by companies like" (Client logos/names).
+        -   Features (#features) -> Skills (#skills). 6 cards. Update icons/text.
+        -   How it works (#how-it-works) -> About (#about). 3 cols. Update to "My Approach" or "Background".
+        -   Product Preview (#product-preview) -> Projects (#projects). Image + List of 3 projects. Perfect fit.
+        -   Benefits (#benefits) -> Values / Why Hire Me. Or keep as "Benefits" but update text. Or remove? I'll update to "Why Work With Me".
+        -   Testimonials (#testimonials) -> Update quotes/names.
+        -   FAQ (#faq) -> Contact (#contact). Change accordion to contact info cards or just update text. Or I can change the FAQ section to a "Services" or "Process" if About is covered. I'll make FAQ a "Contact & Availability" section. Instead of accordion, I'll put contact details. To minimize structural changes, I'll use the same container classes but replace FAQ content with Contact content.
+        -   Final CTA (#final-cta) -> Update.
+        -   Footer -> Update.
+
+    -   Content Details:
+        -   Name: Chirag Dodiya
+        -   Role: Full-Stack Developer & UI/UX Designer (Realistic combo)
+        -   Hero: "Turning ideas into performant, beautiful digital products."
+        -   Skills: React, Node.js, TypeScript, Tailwind CSS, Figma, Cloud/AWS.
+        -   Projects: E-commerce Platform, SaaS Dashboard, Mobile App.
+        -   Testimonials: "Chirag delivered..." from realistic names.
+        -   Contact: Email, LinkedIn, Calendly link.
+
+    -   Script/Functionality:
+        -   Keep theme toggle, mobile menu, slider, FAQ toggle (repurpose for contact accordion if needed, or just static contact info). If I change FAQ to Contact, I might lose the JS utility, but that's fine. I'll just keep the JS but maybe the FAQ section becomes "Common Questions about hiring" or I just change the content to "Contact Methods" and keep the accordion structure for "Response Time", "Availability", "Engagement Models". That preserves JS and structure perfectly.
+
+    -   Execution:
+        -   Update `<title>`.
+        -   Update Nav: Logo "CD", Links: `#about`, `#skills`, `#projects`, `#testimonials`, `#faq` (keep ID or change to contact? I'll change ID to `#contact` and update links. The JS uses IDs? No, JS uses classes or generic selectors mostly. `initHeroSlider` uses classes. `initFaq` uses classes. `initMobileMenu` uses IDs. I need to be careful with IDs. If I change `#faq` to `#contact`, I need to update nav links. The mobile menu links use `#faq`. I'll update them.
+        -   Update Hero text/images. Slider images/text.
+        -   Update Trusted By.
+        -   Update Features -> Skills.
+        -   Update How it works -> About/Process.
+        -   Update Product Preview -> Projects (List 3 projects here).
+        -   Update Benefits -> Why Work With Me.
+        -   Update Testimonials.
+        -   Update FAQ -> Contact (Accordions: How to hire? Availability? Response time?). This keeps the JS `initFaq` working.
+        -   Update Final CTA.
+        -   Update Footer.
+
+    -   Check constraints:
+        -   Preserve structure? Yes, section IDs and classes remain, content changes.
+        -   Tailwind/Dark mode? Yes.
+        -   No template wording? Yes, replace all.
+        -   Responsive/Accessible? Yes.
+
+    Let's draft the HTML changes.
+
+    Structure mapping:
+    `#hero` -> Hero
+    `#trusted-by` -> Trusted By
+    `#features` -> Skills
+    `#how-it-works` -> About/Approach
+    `#product-preview` -> Projects
+    `#benefits` -> Values
+    `#testimonials` -> Testimonials
+    `#faq` -> Contact (Accordion style: "How can we work together?", "What's your availability?", "Do you provide maintenance?")
+    `#final-cta` -> CTA
+
+    I will rewrite the content within these structural blocks.
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML Starter - Productivity Platform</title>
+  <meta name="description" content="Portfolio of Chirag Dodiya — Full-Stack Developer & UI/UX Designer crafting performant, scalable, and beautiful digital products." />
+  <title>Chirag Dodiya — Full-Stack Developer & Designer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,23 +154,23 @@
       <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
         <a href="#hero" class="flex items-center gap-3 transition hover:opacity-90">
           <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-xl">
-            <span class="text-sm font-bold">HS</span>
+            <span class="text-sm font-bold">CD</span>
           </div>
-          <span class="text-xl font-bold tracking-tight">HTML Starter</span>
+          <span class="text-xl font-bold tracking-tight">Chirag Dodiya</span>
         </a>
         <div class="hidden items-center gap-6 md:flex">
-          <a href="#features" class="text-sm font-medium transition hover:text-indigo-600">Features</a>
-          <a href="#how-it-works" class="text-sm font-medium transition hover:text-indigo-600">How it Works</a>
+          <a href="#about" class="text-sm font-medium transition hover:text-indigo-600">About</a>
+          <a href="#skills" class="text-sm font-medium transition hover:text-indigo-600">Skills</a>
+          <a href="#projects" class="text-sm font-medium transition hover:text-indigo-600">Projects</a>
           <a href="#testimonials" class="text-sm font-medium transition hover:text-indigo-600">Testimonials</a>
-          <a href="#faq" class="text-sm font-medium transition hover:text-indigo-600">FAQ</a>
-          <a href="components-showcase.html" class="text-sm font-medium transition hover:text-indigo-600">Components</a>
+          <a href="#faq" class="text-sm font-medium transition hover:text-indigo-600">Contact</a>
         </div>
         <div class="hidden md:flex md:items-center md:gap-3">
           <button type="button" id="theme-toggle" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
             <svg id="icon-sun" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             <svg id="icon-moon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
           </button>
-          <a href="#final-cta" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Get Started</a>
+          <a href="#faq" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Let's Talk</a>
         </div>
         <div class="flex items-center gap-1 md:hidden">
           <button type="button" id="theme-toggle-mobile" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
@@ -57,12 +185,12 @@
       </div>
       <div id="mobile-menu" class="hidden border-t border-white/20 bg-white/90 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/90 md:hidden">
         <div class="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-3 sm:px-6">
-          <a href="#features" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Features</a>
-          <a href="#how-it-works" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">How it Works</a>
+          <a href="#about" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">About</a>
+          <a href="#skills" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Skills</a>
+          <a href="#projects" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Projects</a>
           <a href="#testimonials" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Testimonials</a>
-          <a href="#faq" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">FAQ</a>
-          <a href="components-showcase.html" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Components</a>
-          <a href="#final-cta" class="mobile-link mt-1 inline-flex justify-center rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">Get Started</a>
+          <a href="#faq" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Contact</a>
+          <a href="#faq" class="mobile-link mt-1 inline-flex justify-center rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">Let's Talk</a>
         </div>
       </div>
     </nav>
@@ -74,47 +202,49 @@
       <section id="hero" class="py-16 sm:py-28">
         <div class="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-[11px] sm:text-sm font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">Bring structure to your workflows</span>
-            <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">Run your entire workflow from one clean dashboard.</h1>
-            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">HTML Starter helps modern teams automate routine tasks, track projects in real time, and ship work faster without chaos.</p>
+            <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-[11px] sm:text-sm font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">Open to New Opportunities</span>
+            <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">Crafting high-performance digital experiences that users love.</h1>
+            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">I’m Chirag Dodiya, a full-stack developer and designer specializing in scalable web applications, clean UI/UX, and converting complex ideas into elegant products.</p>
             <div class="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#final-cta" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Get Started in Minutes</a>
-              <a href="#how-it-works" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">View how it works <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">View My Work</a>
+              <a href="#about" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">Read My Story <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
             </div>
             <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
-              <span>No credit card required</span>
+              <span>React & Next.js Expert</span>
               <span class="hidden h-1 w-1 rounded-full bg-slate-300 sm:inline-block"></span>
-              <span>Set up in under 5 minutes</span>
+              <span>5+ Years Experience</span>
+              <span class="hidden h-1 w-1 rounded-full bg-slate-300 sm:inline-block"></span>
+              <span>Available for Freelance</span>
             </div>
           </div>
           <div class="relative">
             <div id="hero-slider" class="relative overflow-hidden rounded-3xl border border-white/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/60">
               <div class="relative h-80 sm:h-96 lg:h-[28rem]">
                 <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-700" data-index="0">
-                  <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Plan sprints" class="h-full w-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" alt="Web Development Workspace" class="h-full w-full object-cover">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div class="absolute bottom-6 left-6 text-white">
-                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Sprint planning</span>
-                    <h3 class="mt-2 text-lg font-semibold">Plan sprints with total clarity</h3>
-                    <p class="text-sm text-white/80">See every task, owner, and deadline in one organized view.</p>
+                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Full-Stack</span>
+                    <h3 class="mt-2 text-lg font-semibold">Robust, Scalable Code</h3>
+                    <p class="text-sm text-white/80">Architecting secure backends and responsive frontends that grow with your business.</p>
                   </div>
                 </div>
                 <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" data-index="1">
-                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" alt="Automate handoffs" class="h-full w-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80" alt="UI Design Process" class="h-full w-full object-cover">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div class="absolute bottom-6 left-6 text-white">
-                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Automation rules</span>
-                    <h3 class="mt-2 text-lg font-semibold">Automate repetitive handoffs</h3>
-                    <p class="text-sm text-white/80">Turn status updates and assignments into simple rules.</p>
+                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">UI/UX Design</span>
+                    <h3 class="mt-2 text-lg font-semibold">Intuitive User Interfaces</h3>
+                    <p class="text-sm text-white/80">Designing seamless journeys focused on usability, accessibility, and conversion.</p>
                   </div>
                 </div>
                 <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" data-index="2">
-                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Monitor progress" class="h-full w-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Project Management" class="h-full w-full object-cover">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div class="absolute bottom-6 left-6 text-white">
-                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Live reporting</span>
-                    <h3 class="mt-2 text-lg font-semibold">Monitor progress in real time</h3>
-                    <p class="text-sm text-white/80">Track throughput, blockers, and ownership from one dashboard.</p>
+                    <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Collaboration</span>
+                    <h3 class="mt-2 text-lg font-semibold">Transparent Communication</h3>
+                    <p class="text-sm text-white/80">Regular updates, agile delivery, and a partnership approach to every project.</p>
                   </div>
                 </div>
               </div>
@@ -131,127 +261,128 @@
       <!-- Trusted by -->
       <section id="trusted-by" class="border-y border-white/20 py-16 dark:border-slate-800/60">
         <div class="mx-auto max-w-5xl text-center">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Trusted by fast-moving teams</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Technologies & Tools I Master</p>
           <div class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm font-medium text-slate-500 sm:gap-x-16 dark:text-slate-400">
-            <span class="tracking-tight">NovaCloud</span>
-            <span class="tracking-tight">PixelDesk</span>
-            <span class="tracking-tight">Northwave</span>
-            <span class="tracking-tight">LinearLabs</span>
-            <span class="tracking-tight">Brightline</span>
+            <span class="tracking-tight">React / Next.js</span>
+            <span class="tracking-tight">TypeScript</span>
+            <span class="tracking-tight">Node.js</span>
+            <span class="tracking-tight">Tailwind CSS</span>
+            <span class="tracking-tight">PostgreSQL</span>
+            <span class="tracking-tight">Figma</span>
           </div>
         </div>
       </section>
 
-      <!-- Features -->
-      <section id="features" class="py-10 sm:py-24">
+      <!-- Skills -->
+      <section id="skills" class="py-10 sm:py-24">
         <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Everything you need to move work forward.</h2>
-          <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">Organize projects, automate handoffs, and keep your team aligned from one clean, minimal workspace.</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Core skills & services I bring to the table.</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">From concept to deployment, I handle the full lifecycle of modern web products with a focus on performance and user experience.</p>
         </div>
         <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M5 11h14M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5A2 2 0 003 7v12a2 2 0 002 2z"/></svg>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
             </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Unified task views</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">See every task, deadline, and owner in one place with flexible list, board, and timeline views.</p>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Frontend Development</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Building responsive, interactive UIs with React, Vue, and modern CSS frameworks like Tailwind.</p>
+          </article>
+          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Backend & APIs</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Architecting secure REST & GraphQL APIs, database design, and server management with Node.js.</p>
           </article>
           <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
             </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Automation rules</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Create no-code automations to assign owners, move stages, and notify stakeholders automatically.</p>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">UI/UX Design</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Creating wireframes, prototypes, and design systems focused on clarity, accessibility, and conversion.</p>
           </article>
           <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10h8m-8 4h5M4 6h16a1 1 0 011 1v9a1 1 0 01-1 1h-4.586a1 1 0 00-.707.293L11 21l-3.707-3.707A1 1 0 006.586 17H4a1 1 0 01-1-1V7a1 1 0 011-1z"/></svg>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Context-rich collaboration</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Centralize comments, files, and decisions so nothing gets lost in long email threads.</p>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Performance Optimization</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Auditing and improving Core Web Vitals, load times, and rendering efficiency for better SEO & UX.</p>
           </article>
           <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M7 10l3 3 4-6 5 7"/></svg>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
             </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Real-time reporting</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Track throughput, cycle time, and workload in real time to unblock teams quickly.</p>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Cloud & DevOps</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Deploying and managing apps on AWS/Vercel, setting up CI/CD pipelines, and ensuring 99.9% uptime.</p>
           </article>
           <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 4v5c0 4.418-3.134 8.418-7 9-3.866-.582-7-4.582-7-9V7l7-4z"/></svg>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Enterprise-grade reliability</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Built on secure, scalable infrastructure with audit-friendly activity trails.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7h8M7 17h4m2 0h4M7 7l-3 3m13-3l3 3M7 17l-3-3m13 3l3-3"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Seamless integrations</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Connect your tools so updates flow automatically between chat, email, and calendar.</p>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Technical Consulting</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Advising on stack selection, code audits, and scaling strategies for startups and growing teams.</p>
           </article>
         </div>
       </section>
 
-      <!-- How it works -->
-      <section id="how-it-works" class="border-t border-white/20 py-10 sm:py-24 dark:border-slate-800/60">
+      <!-- About / Process -->
+      <section id="about" class="border-t border-white/20 py-10 sm:py-24 dark:border-slate-800/60">
         <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">How HTML Starter fits your day.</h2>
-          <p class="mt-3 text-sm text-slate-600 sm:text-base">From idea to shipped work in three simple steps.</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">My approach to delivering value.</h2>
+          <p class="mt-3 text-sm text-slate-600 sm:text-base">I combine technical depth with product thinking to build solutions that actually work for your users and business.</p>
         </div>
         <div class="mt-10 grid gap-8 md:grid-cols-3">
           <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">1</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Capture and organize work</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Bring tasks in from email, chat, or spreadsheets and group them into clean projects, sprints, or lanes.</p>
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Discovery & Strategy</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">I start by understanding your goals, users, and constraints. We define clear milestones and success metrics before writing a single line of code.</p>
           </div>
           <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">2</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Automate handoffs</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Define smart rules so work automatically moves to the right person with the right context at the right time.</p>
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Design & Development</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Using agile sprints, I deliver iterative updates. You get regular demos, transparent communication, and a focus on maintainable, clean architecture.</p>
           </div>
           <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">3</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Track, learn, and continuously improve</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Dashboards show bottlenecks, trends, and ownership so you can keep improving your workflows.</p>
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Launch & Growth</h3>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Post-launch isn't the end. I provide monitoring, performance tuning, and roadmap planning to ensure your product scales with your success.</p>
           </div>
         </div>
       </section>
 
-      <!-- Product preview -->
-      <section id="product-preview" class="py-8 sm:py-24">
+      <!-- Selected Projects -->
+      <section id="projects" class="py-8 sm:py-24">
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">A single source of truth for every workflow.</h2>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 sm:text-base">Replace scattered spreadsheets, endless status meetings, and buried email threads with one organized view of work. HTML Starter pulls everything together so your team always knows what matters now.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Selected projects.</h2>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 sm:text-base">A curated look at recent work spanning e-commerce, SaaS dashboards, and mobile-first applications.</p>
             <ul class="mt-5 space-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>Customizable dashboards by team, project, or client.</span></li>
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>Instant filters for owners, status, and deadlines.</span></li>
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>Lightweight enough for fast teams, structured enough for scale.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>ShopFlow</strong> – Next.js e-commerce platform with 40% faster load times.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>DataViz Pro</strong> – React analytics dashboard handling 1M+ daily events.</span></li>
+              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>FitSync App</strong> – Cross-platform health tracker with offline sync.</span></li>
             </ul>
           </div>
           <div class="relative">
             <div class="overflow-hidden rounded-3xl border border-white/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/60">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Dashboard mockup" class="h-full w-full object-cover">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Project showcase dashboard" class="h-full w-full object-cover">
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Benefits -->
+      <!-- Why Work With Me -->
       <section id="benefits" class="border-y border-white/20 py-8 sm:py-24 dark:border-slate-800/60">
         <div class="grid gap-12 md:grid-cols-2">
           <div>
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Ship more, with less manual work.</h2>
-            <p class="mt-3 text-sm text-slate-600 sm:text-base">HTML Starter gives your team leverage with automated workflows, fewer status pings, and clear ownership, so you can get more done in less time.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Why partners choose to work with me.</h2>
+            <p class="mt-3 text-sm text-slate-600 sm:text-base">I don't just write code; I solve business problems. My goal is to be a reliable extension of your team.</p>
           </div>
           <div>
             <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Productivity</strong> – Reduce time spent on coordination and keep teams in flow for longer blocks.</span></li>
-              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Automation</strong> – Turn repetitive handoffs into rules so work moves forward while your team focuses on deep work.</span></li>
-              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Growth</strong> – Scale your processes without adding unnecessary headcount or complexity.</span></li>
-              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Clarity</strong> – Everyone sees priorities, owners, and timelines at a glance.</span></li>
+              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Reliability</strong> – I hit deadlines, communicate proactively, and deliver what was promised.</span></li>
+              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Clean Architecture</strong> – Code that's maintainable, documented, and easy for other developers to build on.</span></li>
+              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>User-Centric</strong> – Every feature is evaluated against real user needs and business impact.</span></li>
+              <li class="flex cursor-default items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span><strong>Full Transparency</strong> – You get direct access to repos, live demos, and weekly progress reports.</span></li>
             </ul>
           </div>
         </div>
@@ -260,60 +391,60 @@
       <!-- Testimonials -->
       <section id="testimonials" class="py-8 sm:py-24">
         <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Teams that switch to HTML Starter move 30% faster.</h2>
-          <p class="mt-3 text-sm text-slate-600 sm:text-base">Real stories from teams that replaced scattered tools with one calm workspace.</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Trusted by founders and product teams.</h2>
+          <p class="mt-3 text-sm text-slate-600 sm:text-base">Here's what clients say about collaborating with me.</p>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article class="flex h-full flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex items-center gap-3">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Ananya B." class="h-10 w-10 rounded-full object-cover">
-              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Ananya B.</div><div class="text-xs text-slate-500 dark:text-slate-400">Head of Operations, NovaCloud</div></div>
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Sarah Jenkins" class="h-10 w-10 rounded-full object-cover">
+              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Sarah Jenkins</div><div class="text-xs text-slate-500 dark:text-slate-400">CTO, NovaTech Solutions</div></div>
             </div>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"HTML Starter transformed how our team understands work in progress. We can now see the status of every project in minutes instead of hours."</p>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"Chirag didn't just build the frontend; he improved our entire deployment workflow. His technical recommendations saved us weeks of refactoring."</p>
           </article>
           <article class="flex h-full flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex items-center gap-3">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Rahul Kumar" class="h-10 w-10 rounded-full object-cover">
-              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Rahul Kumar</div><div class="text-xs text-slate-500 dark:text-slate-400">Product Lead, PixelDesk</div></div>
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Marcus Chen" class="h-10 w-10 rounded-full object-cover">
+              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Marcus Chen</div><div class="text-xs text-slate-500 dark:text-slate-400">Product Manager, FinEdge</div></div>
             </div>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"We consolidated three tools into HTML Starter. Our handoffs are cleaner, and our shipping velocity has gone up significantly."</p>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"Exceptional communication and rapid delivery. Chirag translated our complex financial requirements into an intuitive dashboard flawlessly."</p>
           </article>
           <article class="flex h-full flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
             <div class="flex items-center gap-3">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="Lisa S." class="h-10 w-10 rounded-full object-cover">
-              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Lisa S.</div><div class="text-xs text-slate-500 dark:text-slate-400">Founder, Brightline Studio</div></div>
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="Elena Rossi" class="h-10 w-10 rounded-full object-cover">
+              <div class="text-left"><div class="text-sm font-semibold text-slate-900 dark:text-slate-50">Elena Rossi</div><div class="text-xs text-slate-500 dark:text-slate-400">Founder, Artisan E-com</div></div>
             </div>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"HTML Starter gave our small team enterprise-level workflows without the complexity. It feels calm and focused to work in every day."</p>
+            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">"Working with Chirag felt like a true partnership. He cared about our business metrics as much as the code quality. Highly recommended."</p>
           </article>
         </div>
       </section>
 
-      <!-- FAQ -->
+      <!-- Contact / FAQ -->
       <section id="faq" class="border-y border-white/20 py-8 sm:py-20 dark:border-slate-800/60">
         <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Frequently asked questions</h2>
-          <p class="mt-3 text-sm text-slate-600 sm:text-base">Quick answers to common questions, without a sales call.</p>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Get in touch.</h2>
+          <p class="mt-3 text-sm text-slate-600 sm:text-base">Have a project in mind? Here's everything you need to know about working together.</p>
         </div>
         <div class="mx-auto mt-10 max-w-3xl space-y-3">
           <div class="faq-item overflow-hidden rounded-2xl border border-white/30 bg-white/70 dark:border-slate-700/50 dark:bg-slate-900/60">
-            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">What kind of teams use HTML Starter?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
-            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">HTML Starter works best for product, operations, marketing, customer success, and project teams that want clearer workflows and fewer status meetings.</div>
+            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">How do we start a project?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">Start by sending an email with your project brief or booking a 15-minute discovery call. I'll review your requirements and propose a tailored scope, timeline, and budget within 48 hours.</div>
           </div>
           <div class="faq-item overflow-hidden rounded-2xl border border-white/30 bg-white/70 dark:border-slate-700/50 dark:bg-slate-900/60">
-            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">Do we need a dedicated admin to maintain it?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
-            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">No. HTML Starter is designed so team leads can set up workflows quickly without needing a full-time admin or consultant.</div>
+            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">What is your availability?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">I currently have capacity for 1–2 new clients. For urgent or large-scale projects, I can assemble a vetted network of specialists to ensure we hit your deadlines without compromising quality.</div>
           </div>
           <div class="faq-item overflow-hidden rounded-2xl border border-white/30 bg-white/70 dark:border-slate-700/50 dark:bg-slate-900/60">
-            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">How long does implementation usually take?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
-            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">Most teams get their first workflows live within a day, and fully migrate over within one to two weeks.</div>
+            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">Do you offer ongoing support?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">Yes. After launch, I offer monthly retainer packages for maintenance, feature updates, performance monitoring, and priority bug fixes.</div>
           </div>
           <div class="faq-item overflow-hidden rounded-2xl border border-white/30 bg-white/70 dark:border-slate-700/50 dark:bg-slate-900/60">
-            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">Can HTML Starter integrate with our existing tools?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
-            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">Yes. HTML Starter connects with chat, calendar, and document tools so you can keep your existing stack while centralizing work.</div>
+            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">What tools do you use for communication?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">I'm flexible. Most clients prefer Slack or Microsoft Teams for daily chat, with weekly video syncs via Google Meet or Zoom. I use Notion or Linear for transparent project tracking.</div>
           </div>
           <div class="faq-item overflow-hidden rounded-2xl border border-white/30 bg-white/70 dark:border-slate-700/50 dark:bg-slate-900/60">
-            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">Is my data secure?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
-            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">Your data is encrypted in transit and at rest. Role-based access controls ensure the right people see the right information.</div>
+            <button type="button" class="faq-btn flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-slate-900 dark:text-slate-50 sm:px-5 sm:py-4">How do I contact you directly?<span class="faq-icon ml-4 text-slate-400 transition-transform"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-content hidden border-t border-slate-100 px-4 pb-4 pt-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-400 sm:px-5">You can reach me at <strong>hello@chiragdodiya.dev</strong>. I typically respond within one business day. Feel free to include your calendar link in your message for faster scheduling.</div>
           </div>
         </div>
       </section>
@@ -324,10 +455,11 @@
           <div class="absolute -left-12 -top-12 h-32 w-32 rounded-full bg-white/10"></div>
           <div class="absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-white/10"></div>
           <div class="relative mx-auto max-w-2xl">
-            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to streamline your workflows?</h2>
-            <p class="mt-4 text-base text-blue-100/90 sm:text-lg">Bring your projects, people, and processes into one calm, focused workspace with HTML Starter.</p>
-            <div class="mt-6 flex justify-center">
-              <a href="#hero" class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-lg transition hover:scale-105 hover:shadow-xl">Get Started with HTML Starter</a>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to build something exceptional?</h2>
+            <p class="mt-4 text-base text-blue-100/90 sm:text-lg">Let's turn your vision into a high-performing product. Reach out today to discuss your project goals.</p>
+            <div class="mt-6 flex justify-center gap-4">
+              <a href="#faq" class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-lg transition hover:scale-105 hover:shadow-xl">Send a Message</a>
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">See My Work</a>
             </div>
           </div>
         </div>
@@ -339,12 +471,17 @@
   <footer class="border-t border-white/20 bg-gradient-to-t from-slate-100 to-white dark:from-slate-950 dark:to-slate-900 dark:border-slate-800/60">
     <div class="mx-auto flex max-w-[1600px] flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
       <div class="flex flex-col gap-2">
-        <div class="flex items-center gap-2"><span class="text-base font-semibold text-slate-900 dark:text-slate-50">HTML Starter</span><span class="text-xs text-slate-400 dark:text-slate-500">Productivity Platform</span></div>
-        <p class="max-w-md text-xs text-slate-500 dark:text-slate-400">HTML Starter helps modern teams build calm, automated workflows that everyone actually enjoys using.</p>
-        <p class="text-xs text-slate-400 dark:text-slate-500">© <span id="year"></span> HTML Starter Inc. All rights reserved.</p>
+        <div class="flex items-center gap-2"><span class="text-base font-semibold text-slate-900 dark:text-slate-50">Chirag Dodiya</span><span class="text-xs text-slate-400 dark:text-slate-500">Full-Stack Developer</span></div>
+        <p class="max-w-md text-xs text-slate-500 dark:text-slate-400">Crafting scalable web applications and intuitive digital experiences. Based in India, working globally.</p>
+        <p class="text-xs text-slate-400 dark:text-slate-500">© <span id="year"></span> Chirag Dodiya. All rights reserved.</p>
       </div>
       <div class="flex flex-col gap-4 sm:items-end">
-        <div class="flex gap-5 text-xs text-slate-500"><a href="components-showcase.html" class="hover:text-slate-900 dark:hover:text-slate-50">Components</a><a href="#" class="hover:text-slate-900 dark:hover:text-slate-50">Company</a><a href="#" class="hover:text-slate-900 dark:hover:text-slate-50">Blog</a><a href="#" class="hover:text-slate-900 dark:hover:text-slate-50">Docs</a><a href="#" class="hover:text-slate-900 dark:hover:text-slate-50">Support</a></div>
+        <div class="flex gap-5 text-xs text-slate-500"><a href="#hero" class="hover:text-slate-900 dark:hover:text-slate-50">Home</a><a href="#about" class="hover:text-slate-900 dark:hover:text-slate-50">About</a><a href="#skills" class="hover:text-slate-900 dark:hover:text-slate-50">Skills</a><a href="#projects" class="hover:text-slate-900 dark:hover:text-slate-50">Projects</a><a href="#faq" class="hover:text-slate-900 dark:hover:text-slate-50">Contact</a></div>
+        <div class="flex gap-4 text-xs text-slate-500">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-slate-50">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-slate-50">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-slate-50">Twitter</a>
+        </div>
       </div>
     </div>
   </footer>
